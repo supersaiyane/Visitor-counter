@@ -14,3 +14,6 @@ def increment_count(db: Session, repo: str) -> int:
         counter.count += 1
     db.commit()
     return counter.count
+
+def get_all_counts(db: Session):
+    return db.query(VisitorCount).all()
